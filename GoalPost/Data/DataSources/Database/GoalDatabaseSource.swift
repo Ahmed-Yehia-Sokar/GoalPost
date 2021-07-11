@@ -30,4 +30,29 @@ class GoalDatabaseSource {
             errorHandler(error.localizedDescription)
         }
     }
+    
+    func fetch(completionHandler: ([GoalDataEntity]) -> Void,
+               errorHandler: (String) -> Void) {
+        guard let managedObjectContext = appDelegate?.persistentContainer.viewContext else { return }
+        let fetchRequest = NSFetchRequest<Goal>(entityName: "Goal")
+        var goalDataEntitiesArray = [GoalDataEntity]()
+        
+        do {
+            let goalsArray = try managedObjectContext.fetch(fetchRequest)
+            
+            goalsArray.forEach { (goal: Goal) in
+                let goalDataEntity = GoalDataEntity(description: goal.goalDescription ?? "",
+                                                    type: goal.goalType ?? "",
+                                                    completionValue: Int(goal.goalCompletionValue),
+                                                    progress: Int(goal.goalProgress))
+                
+                goalDataEntitiesArray.append(goalDataEntity)
+            }
+            
+            completionHandler(goalDataEntitiesArray)
+        } catch {
+            debugPrint("\(error.localizedDescription)")
+            errorHandler(error.localizedDescription)
+        }
+    }
 }

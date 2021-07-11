@@ -9,8 +9,8 @@ import Foundation
 
 class ListGoalsViewModelProvider {
     static func getListGoalsViewModel() -> ListGoalsViewModel {
-        let addGoalUsecase = AddGoalUsecaseProvider.getAddGoalUsecase()
-        
-        return ListGoalsViewModel(addGoalUsecase: addGoalUsecase)
+        let listGoalsUsecase = ListGoalsUsecaseProvider.getListGoalUsecase()
+
+        return ListGoalsViewModel(listGoalsUsecase: listGoalsUsecase)
     }
 }

@@ -10,22 +10,21 @@ import Foundation
 class ListGoalsViewModel {
     // MARK:- Properties
     
-    private let addGoalUsecase: AddGoalUsecase
+    private let listGoalsUsecase: ListGoalsUsecase
     
     // MARK:- Methods
     
-    init(addGoalUsecase: AddGoalUsecase) {
-        self.addGoalUsecase = addGoalUsecase
+    init(listGoalsUsecase: ListGoalsUsecase) {
+        self.listGoalsUsecase = listGoalsUsecase
     }
     
-    func save(goalPresentationEntity: GoalPresentationEntity,
-              completionHandler: () -> Void,
-              errorHandler: (String) -> Void) {
-        let goalDomainEntity = GoalPresentationMapper.map(goalPresentationEntity: goalPresentationEntity)
-        
-        addGoalUsecase.save(goalDomainEntity: goalDomainEntity,
-                            completionHandler: completionHandler,
-                            errorHandler: errorHandler)
+    func fetch(completionHandler: ([GoalPresentationEntity]) -> Void,
+               errorHandler: (String) -> Void) {
+        listGoalsUsecase.fetch(completionHandler: { goalDomainEntities in
+            let goalPresentationEntities = GoalPresentationMapper.map(goalDomainEntities: goalDomainEntities)
+            
+            completionHandler(goalPresentationEntities)
+        },
+        errorHandler: errorHandler)
     }
-
 }

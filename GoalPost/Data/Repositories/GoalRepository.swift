@@ -27,4 +27,14 @@ class GoalRepository {
                                 completionHandler: completionHandler,
                                 errorHandler: errorHandler)
     }
+    
+    func fetch(completionHandler: ([GoalDomainEntity]) -> Void,
+               errorHandler: (String) -> Void) {
+        goalDatabaseSource.fetch(completionHandler: { goalDataEntities in
+            let goalDomainEntities = GoalDataMapper.map(goalDataEntities: goalDataEntities)
+            
+            completionHandler(goalDomainEntities)
+        },
+        errorHandler: errorHandler)
+    }
 }
