@@ -105,6 +105,18 @@ extension ListGoalsViewController: UITableViewDelegate {
         }
         return UISwipeActionsConfiguration(actions: actionsArray)
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedGoal = goalEntities[indexPath.row]
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "GoalDetailsViewController")
+        guard let goalDetailsViewController = viewController as? GoalDetailsViewController else {
+            return
+        }
+        
+        goalDetailsViewController.initViewController(goalPresentationEntity: selectedGoal)
+        
+        present(goalDetailsViewController, animated: true, completion: nil)
+    }
 }
 
 extension ListGoalsViewController: UITableViewDataSource {
