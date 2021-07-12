@@ -19,7 +19,7 @@ class ListGoalsUsecase {
     }
     
     func fetch(completionHandler: ([GoalDomainEntity]) -> Void,
-                errorHandler: (String) -> Void) {
+               errorHandler: (String) -> Void) {
         goalRepository.fetch(completionHandler: completionHandler,
                              errorHandler: errorHandler)
     }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ListGoalUsecaseProvider {
+class ListGoalsUsecaseProvider {
     // MARK:- Methods
     
     static func getListGoalsUsecase() -> ListGoalsUsecase {

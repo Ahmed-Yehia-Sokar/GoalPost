@@ -37,4 +37,22 @@ class GoalRepository {
         },
         errorHandler: errorHandler)
     }
+    
+    func update(goalWithId goalId: String,
+                newProgressValue: Int,
+                completionHandler: () -> Void,
+                errorHandler: (String) -> Void) {
+        goalDatabaseSource.update(goalWithId: goalId,
+                                  newProgressValue: newProgressValue,
+                                  completionHandler: completionHandler,
+                                  errorHandler: errorHandler)
+    }
+    
+    func delete(goalWithId goalId: String,
+                completionHandler: () -> Void,
+                errorHandler: (String) -> Void) {
+        goalDatabaseSource.delete(goalWithId: goalId,
+                                  completionHandler: completionHandler,
+                                  errorHandler: errorHandler)
+    }
 }

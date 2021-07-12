@@ -10,6 +10,7 @@ import Foundation
 struct GoalDataEntity {
     // MARK:- Properties
     
+    let id: String
     let description: String
     let type: String
     let completionValue: Int

@@ -8,6 +8,8 @@
 import Foundation
 
 class FinishGoalViewModelProvider {
+    // MARK:- Methods
+    
     static func getFinishGoalViewModel() -> FinishGoalViewModel {
         let addGoalUsecase = AddGoalUsecaseProvider.getAddGoalUsecase()
         

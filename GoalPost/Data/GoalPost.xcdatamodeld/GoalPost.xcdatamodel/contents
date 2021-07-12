@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D75" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Goal" representedClassName="Goal" syncable="YES" codeGenerationType="class">
-        <attribute name="goalCompletionValue" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="goalDescription" optional="YES" attributeType="String"/>
-        <attribute name="goalProgress" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="goalType" optional="YES" attributeType="String"/>
+        <attribute name="goalCompletionValue" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="goalDescription" attributeType="String" defaultValueString=""/>
+        <attribute name="goalID" optional="YES" attributeType="String"/>
+        <attribute name="goalProgress" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="goalType" attributeType="String" defaultValueString=""/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="goalID"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Goal" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="Goal" positionX="-63" positionY="-18" width="128" height="104"/>
     </elements>
 </model>

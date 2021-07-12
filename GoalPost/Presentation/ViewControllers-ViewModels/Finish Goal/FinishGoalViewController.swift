@@ -32,12 +32,13 @@ class FinishGoalViewController: UIViewController {
     
     @IBAction func onCreateGoalButtonTapped(_ sender: UIButton) {
         guard let pointsValue = pointsTextField.text, pointsValue != "" else { return }
-        let points = Int(pointsValue) ?? 0
-        let progress = 0
-        let goalPresentationEntity = GoalPresentationEntity(description: goalDescription,
+        let pointsAsInt = Int(pointsValue) ?? 0
+        let identifier = UUID().uuidString
+        let goalPresentationEntity = GoalPresentationEntity(id: identifier,
+                                                            description: goalDescription,
                                                             type: goalType,
-                                                            completionValue: points,
-                                                            progress: progress)
+                                                            completionValue: pointsAsInt,
+                                                            progress: 0)
         
         finishGoalViewModel.save(goalPresentationEntity: goalPresentationEntity,
                                  completionHandler: completionHandler,

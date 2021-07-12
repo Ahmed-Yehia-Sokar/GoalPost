@@ -13,7 +13,8 @@ class GoalDataMapper {
     static func map(goalDomainEntity: GoalDomainEntity) -> GoalDataEntity {
         let goalType = goalDomainEntity.type.rawValue
         
-        return GoalDataEntity(description: goalDomainEntity.description,
+        return GoalDataEntity(id: goalDomainEntity.id,
+                              description: goalDomainEntity.description,
                               type: goalType,
                               completionValue: goalDomainEntity.completionValue,
                               progress: goalDomainEntity.progress)
@@ -22,12 +23,13 @@ class GoalDataMapper {
     static func map(goalDataEntity: GoalDataEntity) -> GoalDomainEntity {
         let goalType = GoalType(rawValue: goalDataEntity.type) ?? .longTerm
         
-        return GoalDomainEntity(description: goalDataEntity.description,
+        return GoalDomainEntity(id: goalDataEntity.id,
+                                description: goalDataEntity.description,
                                 type: goalType,
                                 completionValue: goalDataEntity.completionValue,
                                 progress: goalDataEntity.progress)
     }
-
+    
     static func map(goalDomainEntities: [GoalDomainEntity]) -> [GoalDataEntity] {
         goalDomainEntities.map(map(goalDomainEntity:))
     }

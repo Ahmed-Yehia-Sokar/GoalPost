@@ -17,13 +17,15 @@ class GoalTableCell: UITableViewCell {
     
     // MARK:- Methods
     
-    func configureCell(withGoal goalPresentationEnttiy: GoalPresentationEntity) {
-        goalDescriptionLbl.text = goalPresentationEnttiy.description
-        goalTypeLbl.text = goalPresentationEnttiy.type.rawValue
-        goalProgressLbl.text = "\(goalPresentationEnttiy.progress)"
+    func configureCell(withGoal goalPresentationEntity: GoalPresentationEntity) {
+        goalDescriptionLbl.text = goalPresentationEntity.description
+        goalTypeLbl.text = goalPresentationEntity.type.rawValue
+        goalProgressLbl.text = "\(goalPresentationEntity.progress)"
         
-        if goalPresentationEnttiy.progress == goalPresentationEnttiy.completionValue {
+        if goalPresentationEntity.progress == goalPresentationEntity.completionValue {
             goalCompletedView.isHidden = false
+        } else {
+            goalCompletedView.isHidden = true
         }
     }
 }

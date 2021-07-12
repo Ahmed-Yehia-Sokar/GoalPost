@@ -31,6 +31,10 @@
 		E3743813269A3ED200CD9FA4 /* GoalDataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3743812269A3ED200CD9FA4 /* GoalDataMapper.swift */; };
 		E380832B269ABD8300097375 /* CreateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E380832A269ABD8300097375 /* CreateGoalViewController.swift */; };
 		E3808335269ABFB500097375 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3808334269ABFB500097375 /* UIButtonExtension.swift */; };
+		E39BB29B269C3EAE00F1ECAD /* DeleteGoalUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39BB29A269C3EAE00F1ECAD /* DeleteGoalUsecase.swift */; };
+		E39BB2A0269C3F2900F1ECAD /* DeleteGoalUsecaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39BB29F269C3F2900F1ECAD /* DeleteGoalUsecaseProvider.swift */; };
+		E39BB2A9269CA5E500F1ECAD /* UpdateGoalUsecaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39BB2A8269CA5E500F1ECAD /* UpdateGoalUsecaseProvider.swift */; };
+		E39BB2AE269CA62C00F1ECAD /* UpdateGoalUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39BB2AD269CA62C00F1ECAD /* UpdateGoalUsecase.swift */; };
 		E3BF8BF0269A481A0061B41D /* GoalRepositoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF8BEF269A481A0061B41D /* GoalRepositoryProvider.swift */; };
 		E3BF8BF7269A4F2D0061B41D /* GoalPresentationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF8BF6269A4F2D0061B41D /* GoalPresentationEntity.swift */; };
 		E3BF8BFC269A4F530061B41D /* GoalPresentationMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BF8BFB269A4F530061B41D /* GoalPresentationMapper.swift */; };
@@ -87,6 +91,10 @@
 		E3743812269A3ED200CD9FA4 /* GoalDataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalDataMapper.swift; sourceTree = "<group>"; };
 		E380832A269ABD8300097375 /* CreateGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalViewController.swift; sourceTree = "<group>"; };
 		E3808334269ABFB500097375 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		E39BB29A269C3EAE00F1ECAD /* DeleteGoalUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteGoalUsecase.swift; sourceTree = "<group>"; };
+		E39BB29F269C3F2900F1ECAD /* DeleteGoalUsecaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteGoalUsecaseProvider.swift; sourceTree = "<group>"; };
+		E39BB2A8269CA5E500F1ECAD /* UpdateGoalUsecaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateGoalUsecaseProvider.swift; sourceTree = "<group>"; };
+		E39BB2AD269CA62C00F1ECAD /* UpdateGoalUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateGoalUsecase.swift; sourceTree = "<group>"; };
 		E3BF8BEF269A481A0061B41D /* GoalRepositoryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalRepositoryProvider.swift; sourceTree = "<group>"; };
 		E3BF8BF6269A4F2D0061B41D /* GoalPresentationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPresentationEntity.swift; sourceTree = "<group>"; };
 		E3BF8BFB269A4F530061B41D /* GoalPresentationMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalPresentationMapper.swift; sourceTree = "<group>"; };
@@ -267,7 +275,9 @@
 			isa = PBXGroup;
 			children = (
 				E37437E3269A399900CD9FA4 /* AddGoalUsecase.swift */,
+				E39BB29A269C3EAE00F1ECAD /* DeleteGoalUsecase.swift */,
 				E367E212269B1F18002247C0 /* ListGoalsUsecase.swift */,
+				E39BB2AD269CA62C00F1ECAD /* UpdateGoalUsecase.swift */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -276,7 +286,9 @@
 			isa = PBXGroup;
 			children = (
 				E37437E9269A39CF00CD9FA4 /* AddGoalUsecaseProvider.swift */,
+				E39BB29F269C3F2900F1ECAD /* DeleteGoalUsecaseProvider.swift */,
 				E367E217269B1F87002247C0 /* ListGoalsUsecaseProvider.swift */,
+				E39BB2A8269CA5E500F1ECAD /* UpdateGoalUsecaseProvider.swift */,
 			);
 			path = UsecaseProviders;
 			sourceTree = "<group>";
@@ -525,14 +537,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E37437CD269A2D7800CD9FA4 /* GoalTableCell.swift in Sources */,
+				E39BB2A9269CA5E500F1ECAD /* UpdateGoalUsecaseProvider.swift in Sources */,
 				E3808335269ABFB500097375 /* UIButtonExtension.swift in Sources */,
 				E3743801269A3CC900CD9FA4 /* GoalDataEntity.swift in Sources */,
+				E39BB29B269C3EAE00F1ECAD /* DeleteGoalUsecase.swift in Sources */,
 				E323FC3E269A10F400CDDCD7 /* AppDelegate.swift in Sources */,
 				E37437B9269A289A00CD9FA4 /* ListGoalsViewController.swift in Sources */,
 				E367E218269B1F87002247C0 /* ListGoalsUsecaseProvider.swift in Sources */,
 				E323FC48269A10F400CDDCD7 /* GoalPost.xcdatamodeld in Sources */,
 				E3D5ADE6269B168E000017BF /* FinishGoalViewModelProvider.swift in Sources */,
 				E3BF8BF0269A481A0061B41D /* GoalRepositoryProvider.swift in Sources */,
+				E39BB2A0269C3F2900F1ECAD /* DeleteGoalUsecaseProvider.swift in Sources */,
 				E37437E4269A399900CD9FA4 /* AddGoalUsecase.swift in Sources */,
 				E3D5ADE1269B1657000017BF /* FinishGoalViewModel.swift in Sources */,
 				E3BF8BFC269A4F530061B41D /* GoalPresentationMapper.swift in Sources */,
@@ -541,6 +556,7 @@
 				E37437F0269A3B2700CD9FA4 /* GoalRepository.swift in Sources */,
 				E374380D269A3E1100CD9FA4 /* GoalType.swift in Sources */,
 				E37437C5269A2BA400CD9FA4 /* SceneDelegate.swift in Sources */,
+				E39BB2AE269CA62C00F1ECAD /* UpdateGoalUsecase.swift in Sources */,
 				E380832B269ABD8300097375 /* CreateGoalViewController.swift in Sources */,
 				E37437D9269A30FA00CD9FA4 /* ListGoalsViewModelProvider.swift in Sources */,
 				E37437D2269A305600CD9FA4 /* ListGoalsViewModel.swift in Sources */,

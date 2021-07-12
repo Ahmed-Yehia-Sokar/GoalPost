@@ -11,14 +11,16 @@ class GoalPresentationMapper {
     // MARK:- Methods
     
     static func map(goalPresentationEntity: GoalPresentationEntity) -> GoalDomainEntity {
-        return GoalDomainEntity(description: goalPresentationEntity.description,
+        return GoalDomainEntity(id: goalPresentationEntity.id,
+                                description: goalPresentationEntity.description,
                                 type: goalPresentationEntity.type,
                                 completionValue: goalPresentationEntity.completionValue,
                                 progress: goalPresentationEntity.progress)
     }
     
     static func map(goalDomainEntity: GoalDomainEntity) -> GoalPresentationEntity {
-        return GoalPresentationEntity(description: goalDomainEntity.description,
+        return GoalPresentationEntity(id: goalDomainEntity.id,
+                                      description: goalDomainEntity.description,
                                       type: goalDomainEntity.type,
                                       completionValue: goalDomainEntity.completionValue,
                                       progress: goalDomainEntity.progress)
